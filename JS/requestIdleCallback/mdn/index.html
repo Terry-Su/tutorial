@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  body {
+  font-family: "Open Sans", "Lucida Grande", "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.logBox {
+  margin-top: 16px;
+  width: 400px;
+  height:500px;
+  border-radius: 6px;
+  border: 1px solid black;
+  box-shadow: 4px 4px 2px black;
+}
+
+.logHeader {
+  margin: 0;
+  padding: 0 6px 4px;
+  height: 22px;
+  background-color: lightblue;
+  border-bottom: 1px solid black;
+  border-radius: 6px 6px 0 0;
+}
+
+#log {
+  font: 12px "Courier", monospace;
+  padding: 6px;
+  overflow: auto;
+  overflow-y: scroll;
+  width: 388px;
+  height: 460px;
+}
+
+.container {
+  width: 400px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid black;
+  box-shadow: 4px 4px 2px black;
+  display: block;
+  overflow: auto;
+}
+
+.label {
+  display: inline-block;
+}
+
+.counter {
+  text-align: right;
+  padding-top: 4px;
+  float: right;
+}
+
+.button {
+  padding-top: 2px;
+  padding-bottom: 4px;
+  width: 100px;
+  display: inline-block;
+  float: left;
+  border: 1px solid black;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 0;
+  color: white;
+  background-color: darkgreen;
+}
+
+#progress {
+  width: 100%;
+  padding-top: 6px;
+}
+  </style>
+</head>
+<body>
+  <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API -->
+
+<p>
+    Demonstration of using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API">
+    cooperatively scheduled background tasks</a> using the <code>requestIdleCallback()</code>
+    method.
+  </p>
+  
+  <div class="container">
+    <div class="label">Decoding quantum filament tachyon emissions...</div>
+    <progress id="progress" value="0"></progress>
+    <div class="button" id="startButton">
+      Start
+    </div>
+    <div class="label counter">
+      Task <span id="currentTaskNumber">0</span> of <span id="totalTaskCount">0</span>
+    </div>
+  </div>
+  
+  <div class="logBox">
+    <div class="logHeader">
+      Log
+    </div>
+    <div id="log">
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

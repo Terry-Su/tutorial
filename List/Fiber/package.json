@@ -1,0 +1,24 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --port 3610 --server --watch --directory --no-open",
+    "test": "ts-node --project ./ts/tsconfig.json node_modules/jasmine/bin/jasmine --config=ts/spec/support/jasmine.json",
+    "ts": "tsc -p .",
+    "server": "browser-sync start --server --port 6066 --watch test --directory --startPath /test/Counter/index.html --no-open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^3.3.0",
+    "@types/jsdom": "^12.2.0",
+    "browser-sync": "^2.26.3",
+    "jasmine": "^3.3.0",
+    "jsdom": "^13.0.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
